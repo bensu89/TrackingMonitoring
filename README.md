@@ -1,16 +1,81 @@
-# React + Vite
+# Sistem Informasi Monitoring Perkuliahan Terpadu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistem aplikasi web berbasis **React** dan **Supabase** untuk memantau kehadiran dosen secara *real-time*, memudahkan pelaporan mahasiswa, dan menyediakan dashboard administrasi bagi BAAK.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fitur Utama
 
-## React Compiler
+### 1. Dashboard Mahasiswa
+Aplikasi "mobile-first" yang didesain seperti aplikasi native untuk kemudahan akses mahasiswa.
+- **Smart Schedule**: Otomatis menampilkan jadwal kuliah yang sedang aktif berdasarkan hari dan jam saat ini.
+- **Pelaporan Real-time**: Mencatat waktu **Masuk** dan **Keluar** dosen dengan presisi detik.
+- **Status Kehadiran**: Melaporkan status dosen (Hadir / Tidak Hadir / Tugas).
+- **History (Coming Soon)**: Riwayat kehadiran perkuliahan.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Live Monitoring Display
+Tampilan layar penuh (Full Screen) yang diperuntukkan untuk layar TV / Monitor di lobi kampus.
+- **Update Otomatis**: Data diperbarui secara *real-time* tanpa perlu refresh halaman (menggunakan Supabase Realtime).
+- **Tracking Detail**: Menampilkan status kehadiran, jam masuk, dan jam keluar dosen.
+- **Responsif**: Tabel monitoring otomatis menyesuaikan lebar layar.
 
-## Expanding the ESLint configuration
+### 3. Dashboard Admin (BAAK)
+Panel administrasi untuk pengelolaan data akademik.
+- **Manajemen Data Master**: Kelola data Dosen, Mata Kuliah, dan Mahasiswa.
+- **Input Jadwal**: Form input jadwal dengan fitur deteksi konflik (bentrok ruangan/waktu).
+- **Responsive Sidebar**: Menu navigasi yang fleksibel (bisa dibuka-tutup) untuk kenyamanan akses via Desktop maupun Mobile.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Frontend**: [React.js](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Backend & Database**: [Supabase](https://supabase.com/) (PostgreSQL + Auth + Realtime)
+
+---
+
+## 📦 Cara Instalasi & Menjalankan Project
+
+1.  **Clone Repository**
+    ```bash
+    git clone https://github.com/bensu89/TrackingMonitoring.git
+    cd absensi-dosen
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Setup Environment Variables**
+    Buat file `.env` dan isi dengan kredensial Supabase Anda:
+    ```env
+    VITE_SUPABASE_URL=your_supabase_url
+    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
+
+4.  **Jalankan Development Server**
+    ```bash
+    npm run dev
+    ```
+
+5.  **Build untuk Production**
+    ```bash
+    npm run build
+    ```
+
+---
+
+## 📝 Catatan Rilis Terakhir (v1.1)
+
+- **[New]** Fitur pencatatan terpisah untuk Waktu Masuk & Waktu Keluar.
+- **[New]** Tampilan Monitoring Table yang lebih luas (Full Screen).
+- **[Update]** Sidebar Admin yang responsif (Hamburger Menu).
+- **[Fix]** Perbaikan logika *Smart Schedule* pada dashboard mahasiswa.
+
+---
+
+© 2026 Pusat Data & Informasi Akademik - Fakultas Teknologi Informasi
